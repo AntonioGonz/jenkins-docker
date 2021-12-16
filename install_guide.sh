@@ -3,7 +3,6 @@
 adduser jenkins
 usermod -aG sudo jenkins
 usermod -aG ubuntu jenkins
-sudo - jenkins
 su - jenkins
 
 ##### user: jenkins
@@ -21,3 +20,8 @@ sudo sysctl -p
 docker-compose up -d
 # Getting jenkins pass
 sudo cat /var/jenkins_home/secrets/initialAdminPassword
+
+# config pip env
+cd workspace/job-name
+pip3 install -r requirements.txt
+// add .env with generated secret key
