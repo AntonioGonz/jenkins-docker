@@ -26,7 +26,7 @@ RUN usermod -aG docker jenkins
 
 # Install Python and Pip
 RUN apt-get update && \
-apt-get -y install python3-pip 
+apt-get -y install python3-pip ssh
 
 # pyenv
 RUN apt-get install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libpq-dev python3-dev
@@ -39,7 +39,7 @@ RUN pyenv install ${PYTHON_VERSION}
 RUN pyenv global ${PYTHON_VERSION}
 
 # Install pipenv and compilation dependencies
-RUN pip install pipenv 
+RUN pip install pipenv
 RUN apt-get update && apt-get install -y --no-install-recommends gcc
 
 USER jenkins

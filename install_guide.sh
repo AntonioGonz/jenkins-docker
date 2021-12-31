@@ -7,11 +7,11 @@ su - jenkins
 
 ##### user: jenkins
 
-sudo ls -l /root 
+sudo ls -l /root
 vim install.sh
 sudo bash install.sh
 vim docker-compose.yml
-mkdir dockerAgent 
+mkdir dockerAgent
 vim dockerAgent/Dockerfile
 # Add the line "vm.max_map_count = 262144" inside the file "/etc/sysctl.conf"
 sudo vim /etc/sysctl.conf
